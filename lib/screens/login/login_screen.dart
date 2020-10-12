@@ -4,6 +4,7 @@ import 'package:maxposv2/components/responsive.dart';
 import 'package:maxposv2/components/rounded_button.dart';
 import 'package:maxposv2/components/rounded_input_field.dart';
 import 'package:maxposv2/components/rounded_password_field.dart';
+import 'package:maxposv2/screens/dashboard/main.dart';
 import 'package:maxposv2/screens/register/register_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -118,7 +119,12 @@ class LoginScreen extends StatelessWidget {
                 FadeAnimation(
                   2.9,
                   InkWell(
-                    onTap: () => print('login tapped'),
+                    onTap: () => Navigator.push(
+                        context,
+                        PageTransition(
+                          duration: Duration(milliseconds: 600),
+                            type: PageTransitionType.leftToRightWithFade,
+                            child: DashboardScreen())),
                     child: Container(
                       height: SizeConfig.safeBlockHorizontal * 13,
                       width: SizeConfig.safeBlockHorizontal * 86,
